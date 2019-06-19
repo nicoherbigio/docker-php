@@ -54,7 +54,7 @@ WORKDIR ${APACHE_DOCUMENT_ROOT}
 # Install and Configure Xdebug.
 
 RUN set -ex \
-    && pecl install xdebug-2.6.1 \
+    && pecl install xdebug-2.7.2 \
     && docker-php-ext-enable xdebug \
     && { \
         echo 'xdebug.remote_enable = 1'; \
