@@ -1,4 +1,4 @@
-FROM php:7.3.9-apache-stretch
+FROM php:7.3.10-apache-stretch
 
 LABEL maintainer="Nico Herbig <nico@nicoherbig.io>"
 
