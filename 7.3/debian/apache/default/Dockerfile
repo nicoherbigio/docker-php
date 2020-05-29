@@ -15,7 +15,6 @@ RUN set -ex \
        } | tee /usr/local/etc/php/conf.d/docker-php-timezone.ini
 
 
-
 # Set locale to "de_DE.UTF-8".
 
 RUN set -ex \
