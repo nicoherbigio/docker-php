@@ -1,4 +1,4 @@
-FROM php:7.3.32-apache-buster
+FROM php:7.3.33-apache-buster
 
 LABEL maintainer="Nico Herbig <nico@nicoherbig.io>"
 
