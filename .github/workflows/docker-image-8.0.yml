@@ -15,8 +15,8 @@ env:
   DOCKERHUB_IMAGE_TAGS: |
     nicoherbigde/php:8.0-apache
     nicoherbigio/php:8.0-apache
-    nicoherbigde/php:8.0.17-apache
-    nicoherbigio/php:8.0.17-apache
+    nicoherbigde/php:8.0.18-apache
+    nicoherbigio/php:8.0.18-apache
 
 jobs:
   build-and-push:
