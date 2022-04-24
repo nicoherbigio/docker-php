@@ -35,13 +35,15 @@ ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en
 
 
 # Configure Apache and PHP.
+#   - activate commonly used Apache modules
 #   - switch Apache server signature off
 #   - make Apache document root configureable by environment variable
-#   - use the PHP production settings as default
+#   - use PHP production settings as default
 
 ENV APACHE_DOCUMENT_ROOT=/app
 
 RUN set -ex \
+    && a2enmod expires deflate headers rewrite \
     && sed -i -e '/ServerTokens/s/OS/Prod/g' -e '/ServerSignature/s/On/Off/g' /etc/apache2/conf-available/security.conf \
     && sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf \
     && sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf \
