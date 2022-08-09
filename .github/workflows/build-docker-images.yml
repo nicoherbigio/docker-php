@@ -41,8 +41,8 @@ jobs:
             docker-tags: |
               nicoherbigde/php:8.1-apache
               nicoherbigio/php:8.1-apache
-              nicoherbigde/php:8.1.8-apache
-              nicoherbigio/php:8.1.8-apache
+              nicoherbigde/php:8.1.9-apache
+              nicoherbigio/php:8.1.9-apache
 
     steps:
       - name: Checkout Git Repository
