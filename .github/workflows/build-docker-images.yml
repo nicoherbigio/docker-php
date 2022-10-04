@@ -27,8 +27,8 @@ jobs:
             docker-tags: |
               nicoherbigde/php:7.4-apache
               nicoherbigio/php:7.4-apache
-              nicoherbigde/php:7.4.30-apache
-              nicoherbigio/php:7.4.30-apache
+              nicoherbigde/php:7.4.32-apache
+              nicoherbigio/php:7.4.32-apache
           - version: 8.0
             docker-context: 8.0/debian/apache/default
             docker-tags: |
