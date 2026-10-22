@@ -1,0 +1,39 @@
+#!/bin/sh
+set -e
+
+dir=/usr/src/php
+dir_patch=/usr/src/php_patch
+
+usage() {
+	echo "usage: $0 COMMAND"
+	echo
+	echo "Manage php source tarball lifecycle."
+	echo
+	echo "Commands:"
+	echo "   extract  extract php source tarball into directory $dir if not already done."
+	echo "   delete   delete extracted php source located into $dir if not already done."
+	echo
+}
+
+case "$1" in
+	extract)
+		mkdir -p "$dir"
+		mkdir -p "$dir_patch"
+		if [ ! -f "$dir/.docker-extracted" ]; then
+		  tar -Jxf /usr/src/php.tar.xz -C "$dir" --strip-components=1
+			tar xfz /usr/src/php_patch.tar.gz -C "$dir_patch" --strip-components=1
+			cp -rf "$dir_patch"/* "$dir"
+			touch "$dir/.docker-extracted"
+		fi
+		;;
+
+	delete)
+		rm -rf "$dir"
+		rm -rf "$dir_patch"
+		;;
+
+	*)
+		usage
+		exit 1
+		;;
+esac
